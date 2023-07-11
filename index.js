@@ -31,6 +31,12 @@ const secondUserReplyCompleteBtn =
   document.getElementsByClassName("reply-complete-btn")[1];
 const secondReplyContent =
   document.getElementsByClassName("second-reply-text")[0];
+const returnBtn = document.getElementsByClassName("return-btn")[0];
+
+/* 質問一覧のページに移動する */
+returnBtn.addEventListener("click", function () {
+  location.replace("http://127.0.0.1:5500/question.html");
+});
 
 /* 投稿ボタンをクリックしたとき */
 postBtn.addEventListener("click", function () {
@@ -126,12 +132,16 @@ function createComment() {
     commentText.readOnly = false;
     editCompleteBtn.style.display = "inline";
     editBtn.style.display = "none";
+    commentText.style.border = "solid 2px black";
   });
   /* 修正完了ボタンを押したとき */
   editCompleteBtn.addEventListener("click", function () {
     commentText.readOnly = true;
     editCompleteBtn.style.display = "none";
     editBtn.style.display = "inline";
+    getNowTimes();
+    newComment.getElementsByClassName("user-date")[0].innerHTML = userDate;
+    commentText.style.border = "none";
   });
 
   chatList.appendChild(newComment);
@@ -284,12 +294,17 @@ function createReplyContent() {
       firstReplyCommentText.readOnly = false;
       firstReplyEditCompleteBtn.style.display = "inline";
       firstReplyEditBtn.style.display = "none";
+      firstReplyCommentText.style.border = "solid 2px black";
     });
     /* 修正完了ボタンを押したとき */
     firstReplyEditCompleteBtn.addEventListener("click", function () {
       firstReplyCommentText.readOnly = true;
       firstReplyEditCompleteBtn.style.display = "none";
       firstReplyEditBtn.style.display = "inline";
+      getNowTimes();
+      firstReplyComment.getElementsByClassName("user-date")[0].innerHTML =
+      userDate;
+      firstReplyCommentText.style.border = "none";
     });
 
     firstReplyInput.push(firstReplyText);
@@ -335,12 +350,17 @@ function createReplyContent() {
       secondReplyCommentText.readOnly = false;
       secondReplyEditCompleteBtn.style.display = "inline";
       secondReplyEditBtn.style.display = "none";
+      secondReplyCommentText.style.border = "solid 2px black";
     });
     /* 修正完了ボタンを押したとき */
     secondReplyEditCompleteBtn.addEventListener("click", function () {
       secondReplyCommentText.readOnly = true;
       secondReplyEditCompleteBtn.style.display = "none";
       secondReplyEditBtn.style.display = "inline";
+      getNowTimes();
+      secondReplyComment.getElementsByClassName("user-date")[0].innerHTML =
+      userDate;
+      secondReplyCommentText.style.border = "none";
     });
 
     secondReplyInput.push(secondReplyText);
