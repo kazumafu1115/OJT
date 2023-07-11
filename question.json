@@ -1,0 +1,14 @@
+{
+  "question": [
+    {
+      "id": 1,
+      "title": "How do I delete a Git branch locally and remotely?",
+      "content": "Delete Remote Branch [Original Answer from 5-Jan-2010] From Chapter 3 of Pro Git by Scott Chacon: Deleting Remote Branches Suppose you are done with a remote branch — say, you and your collabora"
+    },
+    {
+      "id": 2,
+      "title": "The definitive guide to form-based website authentication [closed]",
+      "content": "shouldn't use text/html for JSON Internet Explorer sometimes has issues with application/json A rather complete list of Mimetypes and what to use them for The official mime type list at IANA from"
+    }
+  ]
+}

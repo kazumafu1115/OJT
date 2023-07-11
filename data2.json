@@ -1,0 +1,58 @@
+{
+  "answers": [
+    {
+      "id": 1,
+      "question": "The definitive guide to form-based website authentication [closed]",
+      "title": "Form-based authentication for websites",
+      "content": "We believe that Stack Overflow should not just be a resource for very specific technical questions, but also for general guidelines on how to solve variations on common problems.Form based authentication for websites should be a fine topic.",
+      "score": 867,
+      "user": {
+        "image": {
+          "url": "./img/user1-img.jpg"
+        },
+        "username": "Jon Jonson",
+        "userdate": "2023/06/19 11:11:11"
+      },
+      "replies": []
+    },
+    {
+      "id": 2,
+      "title": "PART I: How To Log In",
+      "content": "We'll assume you already know how to build a login+password HTML form which POSTs the values to a script on the server side for authentication. The sections below will deal with patterns for sound practical auth, and how to avoid the most common security pitfalls.",
+      "score": 666,
+      "user": {
+        "image": {
+          "url": "./img/user2-img.jpg"
+        },
+        "username": "鈴木 鈴",
+        "userdate": "2023/07/09 13:45:32"
+      },
+      "replies": [
+        {
+          "id": 3,
+          "title": "PART II: How To Remain Logged In - The Infamous Remember Me Checkbox",
+          "content": "Persistent Login Cookies (remember me functionality) are a danger zone; on the one hand, they are entirely as safe as conventional logins when users understand how to handle them; and on the other hand",
+          "score": 542,
+          "user": {
+            "image": {
+              "url": "./img/user1-img.jpg"
+            },
+            "username": "Jon Jonson"
+          }
+        },
+        {
+          "id": 4,
+          "title": "Additional details",
+          "content": "The following sections describe additional details to consider when deleting your remote and remote-tracking branches",
+          "score": 333,
+          "user": {
+            "image": {
+              "url": "./img/user1-img.jpg"
+            },
+            "username": "Jon Jonson"
+          }
+        }
+      ]
+    }
+  ]
+}

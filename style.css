@@ -1,0 +1,396 @@
+body {
+  width: 800px; /*横幅を800px*/
+  margin: 0 auto; /*autoをつけて中央寄せにする*/
+  min-height: 100vh; /*最低の高さを100vhにする*/
+  display: flex; /*<body>要素をflexコンテナーとする*/
+  flex-direction: column; /*縦一列のレイアウトにする*/
+  background-image: linear-gradient(
+      rgba(0, 0, 255, 0.5),
+      rgba(0, 251, 255, 0.5)
+    ),
+    url("./img/flower.jpg");
+  text-align: center;
+}
+/*Blogのタイトル*/
+.title {
+  color: rgb(255, 255, 255); /*文字の色*/
+  font-size: 25px; /*文字の大きさ*/
+  font-family: "Century", serif; /*文字のフォント*/
+  margin: 30px 0;
+}
+
+/*いいねカウントボタン*/
+.goodcount-btn {
+  float: left; /*左に移動*/
+}
+
+/*いいねカウントボタンのコメントのカウント数*/
+.count {
+  color: rgb(145, 107, 249); /*文字の色*/
+}
+
+/*いいねカウントボタンのプラスボタン*/
+.add-btn {
+  background-color: rgb(83, 83, 211); /*背景色*/
+  color: rgb(255, 255, 255); /*文字の色*/
+  border: solid rgb(255, 255, 255); /*要素の境界の色*/
+  border-radius: 50%; /*形を円に*/
+  margin: 35px 2px 2px; /*上35px,左右2px,下2px*/
+  width: 30px; /*横幅を30px*/
+  height: 30px; /*高さを30px*/
+}
+
+/*いいねカウントボタンのマイナスボタン*/
+.sub-btn {
+  background-color: rgb(228, 80, 80); /*背景色*/
+  color: rgb(255, 255, 255); /*文字の色*/
+  border: solid rgb(255, 255, 255); /*要素の境界の色*/
+  border-radius: 50%; /*形を円に*/
+  margin: 1px 2px 2px; /*上1px,左右2px,下2px*/
+  width: 30px; /*横幅を30px*/
+  height: 30px; /*高さを30px*/
+}
+
+/*修正ボタン*/
+.edit-btn {
+  background-color: rgb(255, 255, 255); /*背景色*/
+  color: rgb(83, 83, 211); /*文字の色*/
+  border: solid rgb(255, 255, 255); /*要素の境界の色*/
+  border-radius: 10px; /*角を丸く*/
+  margin-top: 20px; /*上側に20pxの余白*/
+  margin-right: 5px; /*右側に5px余白*/
+  padding: 0; /*padding領域の余白を0*/
+  font-size: 15px; /*文字の大きさ*/
+  display: none;
+}
+/*修正ボタンのアイコン*/
+.edit-btn::before {
+  margin: 2px; /*上下左右に2px余白*/
+  content: "🖊️";
+  color: transparent; /*文字の色を透明にする*/
+  text-shadow: 0 0 0 rgb(83, 83, 211); /*文字の影に色を付ける*/
+}
+/*修正完了ボタン*/
+.edit-complete-btn {
+  background-color: rgb(255, 255, 255); /*背景色*/
+  color: rgb(83, 83, 211); /*文字の色*/
+  border: solid rgb(255, 255, 255); /*要素の境界の色*/
+  border-radius: 10px; /*角を丸く*/
+  margin-top: 20px; /*上側に20pxの余白*/
+  margin-right: 5px; /*右側に5px余白*/
+  padding: 0; /*padding領域の余白を0*/
+  font-size: 15px; /*文字の大きさ*/
+  display: none;
+}
+/*修正完了ボタンのアイコン*/
+.edit-complete-btn::before {
+  margin-right: 4px;
+  content: "✔️";
+  color: transparent; /*文字の色を透明にする*/
+  text-shadow: 0 0 0 rgb(83, 83, 211); /*文字の影に色を付ける*/
+}
+
+/*削除ボタン*/
+.delete-btn {
+  background-color: rgb(255, 255, 255); /*背景色*/
+  color: rgb(228, 80, 80); /*文字の色*/
+  border: solid rgb(255, 255, 255); /*要素の境界の色*/
+  border-radius: 10px; /*角を丸く*/
+  margin-top: 20px; /*上側に20pxの余白*/
+  margin-right: 10px; /*右側に5px余白*/
+  padding: 0; /*padding領域の余白を0*/
+  font-size: 15px; /*文字の大きさ*/
+  display: none;
+}
+/*削除ボタンのアイコン*/
+.delete-btn::before {
+  content: "🗑️";
+  color: transparent; /*文字の色を透明にする*/
+  text-shadow: 0 0 0 rgb(228, 80, 80); /*文字の影に色を付ける*/
+}
+/*削除ボタンのはいボタン*/
+.delete-yesbtn {
+  width: 100px;
+  background-color: rgb(228, 80, 80); /*背景色*/
+  color: rgb(255, 255, 255); /*文字の色*/
+  border: solid rgb(228, 80, 80); /*要素の境界の色*/
+  border-radius: 10px; /*角を丸く*/
+  margin-right: 30px;
+  margin-top: 15px;
+  padding: 5px; /*padding領域の余白を0*/
+  font-size: 20px; /*文字の大きさ*/
+  float: right; /*右に移動*/
+}
+/*削除ボタンのいいえボタン*/
+.delete-nobtn {
+  width: 100px;
+  background-color: rgb(184, 184, 184); /*背景色*/
+  color: rgb(255, 255, 255); /*文字の色*/
+  border: solid rgb(184, 184, 184); /*要素の境界の色*/
+  border-radius: 10px; /*角を丸く*/
+  margin-right: 40px;
+  margin-top: 15px;
+  padding: 5px; /*padding領域の余白を0*/
+  font-size: 20px; /*文字の大きさ*/
+  float: right; /*右に移動*/
+}
+
+/*返信ボタン*/
+.reply-btn {
+  background-color: rgb(255, 255, 255); /*背景色*/
+  color: rgb(83, 83, 211); /*文字の色*/
+  border: solid rgb(255, 255, 255); /*要素の境界の色*/
+  border-radius: 10px; /*角を丸く*/
+  margin-top: 20px; /*上側に20pxの余白*/
+  margin-right: 10px; /*右側に5px余白*/
+  padding: 0; /*padding領域の余白を0*/
+  font-size: 15px; /*文字の大きさ*/
+  /* display: none; */
+}
+/*返信ボタンのアイコン*/
+.reply-btn::before {
+  margin-right: 4px;
+  content: "✉️";
+  color: transparent; /*文字の色を透明にする*/
+  text-shadow: 0 0 0 rgb(83, 83, 211); /*文字の影に色を付ける*/
+}
+/*返信完了ボタン*/
+.reply-complete-btn {
+  background-color: rgb(255, 255, 255); /*背景色*/
+  color: rgb(83, 83, 211); /*文字の色*/
+  border: solid rgb(255, 255, 255); /*要素の境界の色*/
+  border-radius: 10px; /*角を丸く*/
+  margin-top: 20px; /*上側に20pxの余白*/
+  margin-right: 10px; /*右側に5px余白*/
+  padding: 0; /*padding領域の余白を0*/
+  font-size: 15px; /*文字の大きさ*/
+  display: none;
+}
+/*返信完了ボタンのアイコン*/
+.reply-complete-btn::before {
+  margin-right: 4px;
+  content: "✔️";
+  color: transparent; /*文字の色を透明にする*/
+  text-shadow: 0 0 0 rgb(83, 83, 211); /*文字の影に色を付ける*/
+}
+
+/*投稿ボタン*/
+.post-btn {
+  background-color: rgb(112, 191, 255); /*背景色*/
+  color: rgb(255, 255, 255); /*文字の色*/
+  border: solid rgb(255, 255, 255); /*要素の境界の色*/
+  border-radius: 10px; /*角を丸く*/
+  margin-top: 14px; /*上側に14px余白*/
+  margin-right: 20px; /*右側に余白*/
+  font-size: 25px; /*文字の大きさ*/
+  float: right; /*右に移動*/
+}
+
+/*ボタンをクリックしたときに下に動かす*/
+.add-btn:active,
+.sub-btn:active,
+.edit-btn:active,
+.delete-btn:active,
+.post-btn:active,
+.delete-yesbtn:active,
+.delete-nobtn:active,
+.edit-complete-btn:active,
+.reply-btn:active,
+.reply-complete-btn:active {
+  transform: translateY(5px);
+}
+
+/*ボタンにカーソルがあったときに透けるようにし,マウスカーソルを指マークにする*/
+.add-btn:hover,
+.sub-btn:hover,
+.edit-btn:hover,
+.delete-btn:hover,
+.post-btn:hover,
+.delete-yesbtn:hover,
+.delete-nobtn:hover,
+.edit-complete-btn:hover,
+.reply-btn:hover,
+.reply-complete-btn:hover {
+  opacity: 0.5;
+  cursor: pointer;
+}
+
+/*user1のイメージ写真*/
+.first-user-img {
+  width: 40px; /*横幅を40px*/
+  height: 40px; /*高さを40px*/
+  margin: 10px 10px 0; /*上に10px,左右に10px,下に0余白を空ける*/
+  /* background: url("./img/user1-img.jpg"); */
+  background-size: cover; /*画像をしての領域の中に表示させる*/
+  border-radius: 50%; /*イメージ写真を円にする*/
+  /* float: left; */
+}
+
+/*user2のイメージ写真*/
+.second-user-img {
+  width: 40px; /*横幅を40px*/
+  height: 40px; /*高さを40px*/
+  margin: 10px 10px 0; /*上に10px,左右に10px,下に0余白を空ける*/
+  /* background: url("./img/user2-img.jpg"); */
+  background-size: cover; /*画像をしての領域の中に表示させる*/
+  border-radius: 50%; /*イメージ写真を円にする*/
+  /* float: left;  */
+}
+img {
+  width: 40px; /*横幅を40px*/
+  height: 40px; /*高さを40px*/
+  margin-top: 3px;
+  background-size: cover; /*画像をしての領域の中に表示させる*/
+  border-radius: 50%; /*イメージ写真を円にする*/
+  /* float: left;  */
+}
+
+/*自分のイメージ写真*/
+.my-img {
+  width: 40px; /*横幅を40px*/
+  height: 40px; /*高さを40px*/
+  margin: 5px; /*上下左右に10pxの余白を空ける*/
+  background: url("./img/myimg.jpg");
+  background-size: cover; /*画像をしての領域の中に表示させる*/
+  border-radius: 50%; /*イメージ写真を円にする*/
+  float: left; /*左に移動*/
+}
+
+/*イメージ写真にカーソルを合わせると拡大する*/
+.first-user-img:hover,
+.second-user-img:hover,
+.my-img:hover {
+  transform: scale(1.1);
+}
+
+/*コメント内容*/
+.comment-text {
+  display: inline-block; /*インラインでwidth,height,margin,padding,borderを使う*/
+  width: 85%; /*横幅を95%*/
+  padding: 10px; /*padding領域の上下左右に10pxの余白*/
+  caret-color: rgb(145, 107, 249); /*入力キャレットの色変更*/
+  border: solid rgb(255, 255, 255); /*要素の境界の色*/
+  box-sizing: border-box; /*元の大きさを維持させる*/
+  resize: none; /*textareaをサイズ変更不可(固定)する*/
+  background-color: rgb(255, 255, 255); /*背景色*/
+  margin: 0.5em 0; /*上下を0.5em,左右を0 */
+  margin-left: 5px; /*左側に５pxの余白を空ける*/
+  line-height: 1.5; /*行ボックスの高さ*/
+  height: 85px; /*高さ*/
+}
+
+.title-text {
+  display: inline-block; /*インラインでwidth,height,margin,padding,borderを使う*/
+  width: 75.5%; /*横幅を80%*/
+  padding: 10px; /*padding領域の上下左右に10pxの余白*/
+  caret-color: rgb(145, 107, 249); /*入力キャレットの色変更*/
+  border: 1px solid rgb(128, 128, 128); /*要素の境界の色*/
+  box-sizing: border-box; /*元の大きさを維持させる*/
+  resize: none; /*textareaをサイズ変更不可(固定)する*/
+  background-color: rgb(234, 231, 231); /*背景色*/
+  margin: 15px 10px 2px 10px; /*上15px,左右2px,下10px*/
+  line-height: 0.5; /*行ボックスの高さ*/
+  height: 40px; /*高さ*/
+}
+
+/*投稿内容*/
+.post-text {
+  display: inline-block; /*インラインでwidth,height,margin,padding,borderを使う*/
+  width: 80%; /*横幅を80%*/
+  padding: 10px; /*padding領域の上下左右に10pxの余白*/
+  caret-color: rgb(145, 107, 249); /*入力キャレットの色変更*/
+  border: 1px solid rgb(128, 128, 128); /*要素の境界の色*/
+  box-sizing: border-box; /*元の大きさを維持させる*/
+  resize: none; /*textareaをサイズ変更不可(固定)する*/
+  background-color: rgb(234, 231, 231); /*背景色*/
+  margin: 15px 10px 2px 10px; /*上15px,左右2px,下10px*/
+  line-height: 1.5; /*行ボックスの高さ*/
+  height: 85px; /*高さ*/
+}
+/*返信内容*/
+.first-reply-text,
+.second-reply-text {
+  display: inline-block; /*インラインでwidth,height,margin,padding,borderを使う*/
+  width: 80%; /*横幅を80%*/
+  padding: 10px; /*padding領域の上下左右に10pxの余白*/
+  caret-color: rgb(145, 107, 249); /*入力キャレットの色変更*/
+  border: 1px solid rgb(128, 128, 128); /*要素の境界の色*/
+  box-sizing: border-box; /*元の大きさを維持させる*/
+  resize: none; /*textareaをサイズ変更不可(固定)する*/
+  background-color: rgb(234, 231, 231); /*背景色*/
+  margin: 15px 10px 0 0; /*上15px,左右2px,下10px*/
+  line-height: 1.5; /*行ボックスの高さ*/
+  height: 85px; /*高さ*/
+  margin-right: 60px;
+  display: none;
+}
+/*コメントやチャット入力欄の間に余白を空ける*/
+.first-user,
+.second-user,
+.input-comment,
+.newUser {
+  margin: 20px 0;
+}
+/*user1とuser2のコメント欄とチャット入力欄*/
+.first-user,
+.second-user,
+.input-comment,
+.newUser {
+  background-color: rgb(255, 255, 255); /*背景色*/
+  border: solid rgb(145, 107, 249); /*要素の境界の色*/
+  border-radius: 10px; /*角を丸くする*/
+  margin-left: auto; /*要素を右寄せにする*/
+}
+
+/*ユーザーの名前と投稿した日付*/
+.user-name,
+.user-date {
+  margin-left: 7px; /*左側に7pxの余白*/
+  margin-top: 17px; /*上側に2pxの余白*/
+  padding: 3px; /*padding領域の上下左右に3pxの余白*/
+  color: rgb(101, 46, 251); /*文字の色*/
+  /* float: left;  */
+}
+
+/*投稿した日付*/
+.user-date {
+  opacity: 0.5; /*少し透明に*/
+}
+/*削除ボタンを押したときのダイアログ*/
+.delete-dialog {
+  width: 300px;
+  height: 190px;
+  border: solid rgb(255, 255, 255);
+  border-radius: 10px; /*角を丸く*/
+}
+/*ダイアログのテキスト内容*/
+.dialog-text {
+  font-size: small;
+  opacity: 0.5;
+}
+/*ダイアログのタイトル*/
+.dialog-title {
+  font-size: large;
+}
+
+.answer-title {
+  margin-left: 23px;
+  margin-top: 17px;
+  padding: 3px;
+  color: rgb(0, 0, 0);
+  font-size: 20px;
+}
+
+.user-info {
+  display: flex;
+}
+.user-function {
+  margin-left: auto;
+}
+
+select {
+  width: 20%;
+  font-size: 0.9rem;
+  padding: 2px 5px;
+  margin-left: auto;
+}

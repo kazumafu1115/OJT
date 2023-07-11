@@ -1,0 +1,22 @@
+body {
+  width: 800px; /*横幅を800px*/
+  margin: 0 auto; /*autoをつけて中央寄せにする*/
+  min-height: 100vh; /*最低の高さを100vhにする*/
+  display: flex; /*<body>要素をflexコンテナーとする*/
+  flex-direction: column; /*縦一列のレイアウトにする*/
+  background-image: linear-gradient(
+    rgba(0, 0, 255, 0.5),
+    rgba(0, 251, 255, 0.5)
+  );
+  text-align: center;
+}
+
+#question-list {
+  color: rgb(0, 0, 0);
+  font-size: large;
+}
+#question-items {
+  color: rgb(0, 0, 0);
+  font-size: 20px;
+  margin: 80px 0;
+}
