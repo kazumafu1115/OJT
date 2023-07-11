@@ -196,7 +196,8 @@ body {
 .delete-nobtn:active,
 .edit-complete-btn:active,
 .reply-btn:active,
-.reply-complete-btn:active {
+.reply-complete-btn:active,
+.return-btn:active {
   transform: translateY(5px);
 }
 
@@ -210,7 +211,8 @@ body {
 .delete-nobtn:hover,
 .edit-complete-btn:hover,
 .reply-btn:hover,
-.reply-complete-btn:hover {
+.reply-complete-btn:hover,
+.return-btn:hover {
   opacity: 0.5;
   cursor: pointer;
 }
@@ -289,7 +291,7 @@ img {
   resize: none; /*textareaをサイズ変更不可(固定)する*/
   background-color: rgb(234, 231, 231); /*背景色*/
   margin: 15px 10px 2px 10px; /*上15px,左右2px,下10px*/
-  line-height: 0.5; /*行ボックスの高さ*/
+  line-height: 1.0; /*行ボックスの高さ*/
   height: 40px; /*高さ*/
 }
 
@@ -393,4 +395,14 @@ select {
   font-size: 0.9rem;
   padding: 2px 5px;
   margin-left: auto;
+}
+.return-btn {
+  width: 10%;
+  font-size: 0.9rem;
+  padding: 2px 5px;
+  margin-right: auto;
+  background-color: rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
+  border-radius: 10px;
+  border: solid rgb(255, 255, 255);
 }
