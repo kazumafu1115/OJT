@@ -223,8 +223,8 @@ secondUserReplyCompleteBtn.addEventListener("click", function () {
 function createReplyContent() {
   let firstReplyCount = 0;
   let secondReplyCount = 0;
-  const copyMyImg = myImg.cloneNode(true);
   const replyComment = copyChatList.cloneNode(true);
+  const copyMyImg = myImg.cloneNode(true);
 
   const firstUserImg = replyComment.getElementsByClassName("first-user-img")[0];
   const firstReplyCommentText =
